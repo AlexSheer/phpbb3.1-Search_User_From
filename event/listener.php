@@ -71,9 +71,11 @@ class listener implements EventSubscriberInterface
 		$sql_where = $event['sql_where'];
 
 		$user_from = $this->request->variable('user_from', '', true);
+		$user_id = $this->request->variable('user_id', '');
 
 		$this->template->assign_vars(array(
 			'USER_FROM'	=> $user_from,
+			'USER_ID'	=> (int)$user_id,
 			)
 		);
 
@@ -93,6 +95,12 @@ class listener implements EventSubscriberInterface
 
 			$event['sql_where'] = $sql_where;
 			$event['sql_from'] = $sql_from;
+		}
+
+		if ((int)$user_id)
+		{
+			$sql_where .= ' AND u.user_id = '. $user_id .'';
+			$event['sql_where'] = $sql_where;
 		}
 	}
 

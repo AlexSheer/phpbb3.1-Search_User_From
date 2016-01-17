@@ -1,0 +1,9 @@
+services:
+    sheer.search_user_from.listener:
+        class: sheer\search_user_from\event\listener
+        arguments:
+            - @template
+            - @dbal.conn
+            - @request
+        tags:
+            - { name: event.listener }

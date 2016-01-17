@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Allows search users from field From and IP-address of registration",
     "homepage": "http://www.phpbbguru.net/",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "time": "2015-08-17",
     "license": "GPL-2.0",
     "authors": [
